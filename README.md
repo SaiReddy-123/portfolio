@@ -4,7 +4,7 @@ Hello! I’m **Sai**, a data professional who views data as a catalyst for chang
 
 In **2021**, I pursued a Master’s in Information Technology in the USA, focusing on cloud computing and web technologies, further enhancing my technical expertise.
 
-Currently, I work as an **Amazon QuickSight Developer** for a government client, transforming complex data into actionable insights. I am also expanding my skillset in **AI/ML technologies** to stay ahead in data analytics and engineering.
+Currently, I work as an **Amazon QuickSight Developer** for a government client, transforming complex data into actionable insights. I am also expanding my skillset in **AI/ML technologies** to stay ahead in data analytics and engineering. 
 
 I am seeking opportunities to apply my diverse experience and technical knowledge to help organizations unlock the full potential of their data. Let’s connect!
 
