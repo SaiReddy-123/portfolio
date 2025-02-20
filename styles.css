@@ -11,10 +11,14 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    background-image: url('assets/images/data-background.jpg'); /* Background related to data */
+    background-size: cover;
+    background-position: center;
 }
 
+/* Header */
 header {
-    background: #333;
+    background: rgba(51, 51, 51, 0.8); /* Semi-transparent header */
     color: white;
     padding: 1rem;
 }
@@ -36,10 +40,10 @@ nav ul li a {
 }
 
 /* Section Styles */
-section {
+.section {
     padding: 20px;
     margin: 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
     border-radius: 8px;
 }
 
@@ -47,12 +51,48 @@ h1 {
     color: #333;
 }
 
-ul {
-    list-style-type: none;
+/* About Me Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-ul li {
-    margin: 10px 0;
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+/* Tech Stack Section */
+.tech-stack-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.tech-item {
+    text-align: center;
+}
+
+.tech-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.tech-item span {
+    display: block;
+    font-weight: bold;
+    color: #333;
 }
 
 /* Footer Styles */
