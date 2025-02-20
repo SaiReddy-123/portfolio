@@ -19,11 +19,14 @@ I am seeking opportunities to apply my diverse experience and technical knowledg
 **- ✅ Data Visualization & Business Intelligence.**
 Specializing in building interactive dashboards and data visualizations using Amazon QuickSight and other BI tools to transform data into clear, meaningful insights.
 
+
 **- ✅ Data Analysis & Insights.**
 Providing data-driven solutions to optimize business performance and support
 
+
 **- ✅ Cloud & Data Engineering.**
 Leveraging cloud platforms and data pipelines to streamline data processing and improve scalability.
+
 
 **- ✅ AI/ML Exploration.**
 Continuously exploring AI/ML technologies to enhance analytical capabilities and deliver innovative solutions.
