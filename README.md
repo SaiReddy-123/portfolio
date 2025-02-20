@@ -21,6 +21,7 @@ Specializing in building interactive dashboards and data visualizations using Am
 
 **- ✅ Data Analysis & Insights.**
 Providing data-driven solutions to optimize business performance and support
+
 **- ✅ Cloud & Data Engineering.**
 Leveraging cloud platforms and data pipelines to streamline data processing and improve scalability.
 
