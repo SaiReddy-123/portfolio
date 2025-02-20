@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('data-background.jpg'); /* Your background image */
+    background-image: url('data-background.jpg'); /* Optional: Add background image */
     background-size: cover;
     background-position: center;
     color: white;
@@ -33,14 +33,20 @@ nav a {
     font-size: 18px;
 }
 
-/* About Section */
-.about-section {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 12px;
+/* Section General */
+.section {
+    background-color: rgba(0, 0, 0, 0.7);
     margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
 }
 
+h2 {
+    color: #FFD700;
+    text-align: center;
+}
+
+/* About Section */
 .about-container {
     display: flex;
     align-items: center;
@@ -55,60 +61,59 @@ nav a {
     border: 3px solid white;
 }
 
-.about-text h1 {
-    margin: 0;
-    font-size: 32px;
-    color: #FFD700;
-}
-
 .about-text p {
-    margin: 8px 0;
     font-size: 18px;
 }
 
-/* Tech Stack Section */
-#tech-stack {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    margin: 20px;
-    border-radius: 12px;
+/* Skills Section */
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
 }
 
-#tech-stack h2 {
-    text-align: center;
-    font-size: 28px;
-    color: #FFD700;
-}
-
-.tech-container {
+/* Projects Section */
+.projects-container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    gap: 15px;
+    justify-content: center;
 }
 
-.tech-item {
-    text-align: center;
-}
-
-.tech-item img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 8px;
+.project-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
     border-radius: 8px;
+    width: 300px;
 }
 
-.tech-item span {
-    display: block;
+.project-card h3 {
+    color: #FFD700;
+    margin-top: 0;
+}
+
+.project-card p {
     font-size: 16px;
-    color: #ffffff;
+}
+
+/* Contact Section */
+.contact-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.contact-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #FFD700;
+    font-size: 18px;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
