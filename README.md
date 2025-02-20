@@ -2,7 +2,13 @@
 <!--Section 1: Introduce your self-->
 ## ABOUT ME
 
-Hello! I'm Anietie Etuk 🤓, a data analyst, educator, and consultant with a passion for turning data into actionable insights. With experience across sales, operations, finance, and customer service, I help businesses solve challenges and unlock growth.
+Hello! I’m Sai , a data professional who views data as a catalyst for change. With experience as a Programming Analyst, MIS Analyst, and Business Intelligence Engineer Specialist, I’ve developed a deep understanding of how data drives business success.
+
+In 2021, I pursued a Master’s in Information Technology in the USA, focusing on cloud computing and web technologies, further enhancing my technical expertise.
+
+Currently, I work as an Amazon QuickSight Developer for a government client, transforming complex data into actionable insights. I am also expanding my skillset in AI/ML technologies to stay ahead in data analytics and engineering.
+
+I am seeking opportunities to apply my diverse experience and technical knowledge to help organizations unlock the full potential of their data. Let’s connect!
 
 
 <!--Mention your top/relevant skills here - core and soft skills-->
@@ -10,11 +16,16 @@ Hello! I'm Anietie Etuk 🤓, a data analyst, educator, and consultant with a pa
 
 *As the Chief Analyst of SkillAhead Solutions Ltd, I provide consulting and training services for businesses and mentor aspiring analysts.*
 
-**- ✅ Data Analytics Consulting.**
-I provide in-depth analysis and tailored solutions to help you make data-driven decisions, optimize processes, and drive business growth. 
+**- ✅ Data Visualization & Business Intelligence.**
+Specializing in building interactive dashboards and data visualizations using Amazon QuickSight and other BI tools to transform data into clear, meaningful insights.
 
-**- ✅ Staff Training & Development.**
-I offer comprehensive training programs in data analysis, visualization, and data-driven decision-making. From beginner to advanced levels. 
+**- ✅ Data Analysis & Insights.**
+Providing data-driven solutions to optimize business performance and support
+**- ✅ Cloud & Data Engineering.**
+Leveraging cloud platforms and data pipelines to streamline data processing and improve scalability.
+
+**- ✅ AI/ML Exploration.**
+Continuously exploring AI/ML technologies to enhance analytical capabilities and deliver innovative solutions.
 
 
 <!--Section 2: List 3-4 key projects-->
@@ -54,15 +65,15 @@ Unfortunately, there weren’t enough lifeboats for everyone onboard, resulting 
   <tbody>
     <tr>
       <td>📧</td>
-      <td><a href="mailto:anietieetuk@gmail.com">anietieetuk@gmail.com</a></td>
+      <td><a href="mailto:saireddy.chatla@gmail.com">saireddy.chatla@gmail.com</a></td>
     </tr>
     <tr>
       <td>📞</td>
-      <td>(234) 816-763-7212</td>
+      <td>(+1) ‪(508)474-5492‬</td>
     </tr>
     <tr>
       <td>📍</td>
-      <td>PH, Nigeria</td>
+      <td>VA, USA</td>
     </tr>
     <tr>
       <td>⬇️</td>
@@ -70,11 +81,7 @@ Unfortunately, there weren’t enough lifeboats for everyone onboard, resulting 
     </tr>
     <tr>
       <td>🌐</td>
-      <td><a href="https://linkedin.com/in/etukanietie">The things I do daily on LinkedIn</a></td>
-    </tr>
-    <tr>
-      <td>📺</td>
-      <td><a href="https://www.youtube.com/@LearnwithEtuk">Watch my tutorials on YouTube</a></td>
+      <td><a href="https://linkedin.com/in/saireddychatla123">The things I do daily on LinkedIn</a></td>
     </tr>
   </tbody>
 </table>
