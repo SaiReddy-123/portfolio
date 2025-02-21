@@ -45,7 +45,7 @@
               </a>
             </li>
             <li class="nav__item">
-              <a href="#portfolio" class="nav__link">
+              <a href="#certifications" class="nav__link">
                 <i class="uil uil-scenery nav__icon"></i>Certifications
               </a>
             </li>
@@ -508,6 +508,8 @@
 
 
 
+      
+
       <!--=================== Portfolio ===================-->
       <section class="portfolio section" id="portfolio">
         <h2 class="section__title">Projects</h2>
@@ -679,6 +681,161 @@
         </div>
       </section>
 
+<section class="certifications__section service__section" id="certifications">
+    <h2 class="section__title">Certifications</h2>
+    <span class="section__subtitle">My Certifications</span>
+
+    <div class="certifications__container container grid services__container">
+        <div class="certifications__content">
+            <!--====== Certification 1: AWS Cloud Practitioner ======-->
+            <div class="certifications__data">
+                <i class="uil uil-cloud certification__icon"></i> <!-- AWS Icon -->
+                <h3 class="certifications__title">Amazon Web Services Cloud Practitioner</h3>
+                <span class="certifications__subtitle">Amazon</span>
+                <div class="certifications__calender">
+                    <i class="uil uil-calendar-alt"></i> 2021 - 2024
+                </div>
+                <span class="button button--flex button--small button--link services__button" onclick="toggleModal('aws-cloud-practitioner-modal')">
+                    View More
+                    <i class="uil uil-arrow-right button__icon"></i>
+                </span>
+                <div id="aws-cloud-practitioner-modal" class="services__modal hidden">
+                    <div class="services__modal-content">
+                        <h4 class="services__modal-title">Certification Summary:</h4>
+                        <i class="uil uil-times services__modal-close" onclick="toggleModal('aws-cloud-practitioner-modal')"></i>
+                        <ul class="services__modal-services grid">
+                            <li class="services__modal-service">Covered topics: AWS Cloud Computing, Security, Billing</li>
+                            <li class="services__modal-service">Achieved: 90% score in the exam</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--====== Certification 2: Snowflake SnowPro Certified ======-->
+            <div class="certifications__data">
+                <i class="uil uil-cloud-sun certification__icon"></i> <!-- Snowflake Icon -->
+                <h3 class="certifications__title">SnowPro Certified</h3>
+                <span class="certifications__subtitle">Snowflake</span>
+                <div class="certifications__calender">
+                    <i class="uil uil-calendar-alt"></i> 2022 - 2025
+                </div>
+                <span class="button button--flex button--small button--link services__button" onclick="toggleModal('snowpro-certified-modal')">
+                    View More
+                    <i class="uil uil-arrow-right button__icon"></i>
+                </span>
+                <div id="snowpro-certified-modal" class="services__modal hidden">
+                    <div class="services__modal-content">
+                        <h4 class="services__modal-title">Certification Summary:</h4>
+                        <i class="uil uil-times services__modal-close" onclick="toggleModal('snowpro-certified-modal')"></i>
+                        <ul class="services__modal-services grid">
+                            <li class="services__modal-service">Covered topics: Snowflake Architecture, Cloud Data Warehouse</li>
+                            <li class="services__modal-service">Achieved: 85% score in the exam</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--====== Certification 3: Matillion Certified ======-->
+            <div class="certifications__data">
+                <i class="uil uil-cogs certification__icon"></i> <!-- Matillion Icon -->
+                <h3 class="certifications__title">Matillion Certified</h3>
+                <span class="certifications__subtitle">Matillion</span>
+                <div class="certifications__calender">
+                    <i class="uil uil-calendar-alt"></i> 2024 - 2028
+                </div>
+                <span class="button button--flex button--small button--link services__button" onclick="toggleModal('matillion-certified-modal')">
+                    View More
+                    <i class="uil uil-arrow-right button__icon"></i>
+                </span>
+                <div id="matillion-certified-modal" class="services__modal hidden">
+                    <div class="services__modal-content">
+                        <h4 class="services__modal-title">Certification Summary:</h4>
+                        <i class="uil uil-times services__modal-close" onclick="toggleModal('matillion-certified-modal')"></i>
+                        <ul class="services__modal-services grid">
+                            <li class="services__modal-service">Covered topics: Data Integration, ETL processes using Matillion</li>
+                            <li class="services__modal-service">Achieved: Certified Matillion expert</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--====== Certification 4: DBT Fundamentals ======-->
+            <div class="certifications__data">
+                <i class="uil uil-brackets-curly certification__icon"></i> <!-- DBT Icon -->
+                <h3 class="certifications__title">DBT Fundamentals</h3>
+                <span class="certifications__subtitle">DBT Labs</span>
+                <div class="certifications__calender">
+                    <i class="uil uil-calendar-alt"></i> No Expiration
+                </div>
+                <span class="button button--flex button--small button--link services__button" onclick="toggleModal('dbt-fundamentals-modal')">
+                    View More
+                    <i class="uil uil-arrow-right button__icon"></i>
+                </span>
+                <div id="dbt-fundamentals-modal" class="services__modal hidden">
+                    <div class="services__modal-content">
+                        <h4 class="services__modal-title">Certification Summary:</h4>
+                        <i class="uil uil-times services__modal-close" onclick="toggleModal('dbt-fundamentals-modal')"></i>
+                        <ul class="services__modal-services grid">
+                            <li class="services__modal-service">Covered topics: Data Transformation, DBT basics</li>
+                            <li class="services__modal-service">Achieved: Certification in DBT Fundamentals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--====== Certification 5: Generative AI Fundamentals ======-->
+            <div class="certifications__data">
+                <i class="uil uil-brain certification__icon"></i> <!-- AI Icon -->
+                <h3 class="certifications__title">Generative AI Fundamentals</h3>
+                <span class="certifications__subtitle">Databricks</span>
+                <div class="certifications__calender">
+                    <i class="uil uil-calendar-alt"></i> 2024 - 2026
+                </div>
+                <span class="button button--flex button--small button--link services__button" onclick="toggleModal('generative-ai-modal')">
+                    View More
+                    <i class="uil uil-arrow-right button__icon"></i>
+                </span>
+                <div id="generative-ai-modal" class="services__modal hidden">
+                    <div class="services__modal-content">
+                        <h4 class="services__modal-title">Certification Summary:</h4>
+                        <i class="uil uil-times services__modal-close" onclick="toggleModal('generative-ai-modal')"></i>
+                        <ul class="services__modal-services grid">
+                            <li class="services__modal-service">Covered topics: AI principles, Deep Learning, Machine Learning</li>
+                            <li class="services__modal-service">Achieved: Certified in Generative AI Fundamentals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--====== Certification 6: SQL Advanced by HackerRank ======-->
+            <div class="certifications__data">
+                <i class="uil uil-database certification__icon"></i> <!-- SQL Icon -->
+                <h3 class="certifications__title">SQL (Advanced)</h3>
+                <span class="certifications__subtitle">HackerRank</span>
+                <div class="certifications__calender">
+                    <i class="uil uil-calendar-alt"></i> No Expiration
+                </div>
+                <span class="button button--flex button--small button--link services__button" onclick="toggleModal('sql-advanced-modal')">
+                    View More
+                    <i class="uil uil-arrow-right button__icon"></i>
+                </span>
+                <div id="sql-advanced-modal" class="services__modal hidden">
+                    <div class="services__modal-content">
+                        <h4 class="services__modal-title">Certification Summary:</h4>
+                        <i class="uil uil-times services__modal-close" onclick="toggleModal('sql-advanced-modal')"></i>
+                        <ul class="services__modal-services grid">
+                            <li class="services__modal-service">Covered topics: Advanced SQL queries, Subqueries, Joins</li>
+                            <li class="services__modal-service">Achieved: Certificate of Completion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
       <!--===================== Contact Me =====================-->
       <section class="contact section" id="contact">
         <h2 class="section__title">Contact Me</h2>
