@@ -1,1200 +1,1366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Sai's Portfolio!" />
-    <title>Portfolio | Sai</title>
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="./styles.css" rel="stylesheet">
-
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Smooth Scroll and Custom Styles -->
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; }
-        .dark-mode { background-color: #1a202c; color: #cbd5e0; }
-        .section-title { font-size: 2.5rem; font-weight: bold; text-align: center; margin-bottom: 2rem; color: #1d4ed8; }
-        .content-box { background: #ffffff; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
-        .dark .content-box { background: #2d3748; color: #e2e8f0; }
-        .nav-link { padding: 0.5rem 1rem; border-radius: 0.5rem; transition: all 0.3s; color: #3b82f6; }
-        .nav-link:hover, .nav-link:focus { background-color: #3b82f6; color: white; }
-        #scrollTopBtn { position: fixed; bottom: 20px; right: 20px; display: none; background: #3b82f6; color: white; border-radius: 50%; padding: 0.75rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.3s ease-in-out; }
-        #scrollTopBtn:hover { transform: scale(1.1); }
-        .animate-fade-slide { animation: fadeSlide 1.5s ease-in-out; }
-        @keyframes fadeSlide { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-        
-        nav { background-color: rgba(30, 58, 138, 0.9); margin-top: 10px; border-radius: 10px; padding: 0 20px; }
-        nav a { font-size: 0.875rem; }
-        .logo { font-size: 1rem; margin-right: auto; color: #e0e7ff; }
-
-        #home h1 { color: #1e3a8a; }
-        .social-icons a { color: #1e40af; transition: color 0.3s; }
-        .social-icons a:hover { color: #2563eb; }
-
-        .nav-link {
-            @apply text-black hover:underline px-2 py-1 text-lg; }
-            
-            @media (max-width: 640px) {
-                
-                .nav-link {
-                    @apply text-center text-base; }
-                }
-
-    </style>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- AOS Library for Scroll Animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-</head>
-<body class="font-sans bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-   <!-- Navigation Bar -->
-<header class="fixed top-0 left-0 w-full shadow-md z-50 bg-white">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-
-        <!-- Hamburger Button (Visible on Small Screens) -->
-        <button id="menu-toggle" class="text-black sm:hidden focus:outline-none">
-            <i class="fas fa-bars text-2xl"></i>
-        </button>
-
-        <!-- Nav Links (Hidden on Small Screenss) -->
-        <ul id="nav-links" class="hidden sm:flex space-x-4 items-center">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#portfolio" class="nav-link">Projects</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#certifications" class="nav-link">Certifications</a></li>
-            <li><a href="#volunteering" class="nav-link">Volunteering</a></li>
-            <li><a href="#internships" class="nav-link">Internships</a></li>
-            <li><a href="#beyondwork" class="nav-link">Hobbies</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#awards" class="nav-link">Awards</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Dropdown Menu for Small Screens -->
-    <div id="mobile-menu" class="hidden sm:hidden bg-white shadow-md">
-        <ul class="flex flex-col space-y-4 p-4">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#certifications" class="nav-link">Certifications</a></li>
-            <li><a href="#volunteering" class="nav-link">Volunteering</a></li>
-            <li><a href="#internships" class="nav-link">Internships</a></li>
-            <li><a href="#beyondwork" class="nav-link">Hobbies</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#awards" class="nav-link">Awards</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </div>
-</header>
-
-    <script>
-        tailwind.config = {
-          darkMode: 'class',
-        }
-      </script>
-      <!-- Light/Dark Mode Toggle Button -->
-      <button id="theme-toggle" class="fixed top-20 right-5 bg-gray-200 dark:bg-gray-700 p-3 rounded-full shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-        <i class="fas fa-moon hidden dark:inline"></i> <!-- Show Moon in Dark Mode -->
-        <i class="fas fa-sun dark:hidden"></i> <!-- Show Sun in Light Mode -->
-    </button>
-    
-</header>
-
-<!-- CSS 1-->
-<style>
-   nav {
-       background-color: transparent;
-       margin-top: 10px;
-       padding: 0 20px;
-   }
-
-   .nav-link {
-       font-weight: 600;
-       transition: all 0.3s ease-in-out;
-   }
-
-   .nav-link:hover, .nav-link.active {
-       color: #cbcde1;
-       border-bottom: 2px solid #d4d6e2;
-       padding-bottom: 0.5rem;
-   }
-</style>
-
-<style>
-    nav {
-        background-color: transparent;
-        margin-top: 10px;
-        padding: 0 20px;
-    }
- 
-    .nav-link {
-        font-weight: 600;
-        transition: all 0.3s ease-in-out;
-    }
- 
-    .nav-link:hover, .nav-link.active {
-        color: #cbcde1;
-        border-bottom: 2px solid #d4d6e2;
-        padding-bottom: 0.5rem;
-    }
-    #vanta-globe {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;          /* Allows items to wrap on smaller screens */
-        align-items: center;
-        justify-content: flex-start;
-        height: 100vh;
-        padding: 2rem;
-        padding-left: 5rem;
-        min-height: 100vh;        /* Ensures the section takes full screen height */
-    }
- 
-    .home-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 2rem;
-        transform: translateY(-50px); /* Move image upwards */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Chatlaparti · Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    :root {
+      --netflix-red: #E50914;
+      --netflix-dark: #141414;
+      --netflix-darker: #0a0a0a;
+      --netflix-card: #1a1a1a;
+      --netflix-card-hover: #2a2a2a;
+      --netflix-text: #e5e5e5;
+      --netflix-muted: #b3b3b3;
+      --netflix-white: #ffffff;
     }
 
-    .home-image img {
-        width: 300px;
-        height: 340px;
-        object-fit: cover;
-        border-radius: 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        margin: 1rem;            /* Space around the image */
-    }
- 
-    .home-content {
-        text-align: left;
-        z-index: 10;
-        max-width: 50%;
-    }
- 
-    .home-content h2 {
-        font-size: 4rem;
-        font-weight: 800;
-        color: #002057;
-        margin-bottom: 0.5rem;
-    }
- 
-    .home-content h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        color: #1976d2;
-        margin-bottom: 1rem;
-    }
- 
-    .home-content p {
-        font-size: 2rem;
-        color: #0d47a1;
-        font-weight: 600;
-        margin-bottom: 2rem;
-    }
- 
-    .home-content p .typed-text {
-        color: #1565c0;
-        font-weight: 700;
-    }
- 
-    .home-content .btn {
-        display: inline-block;
-        padding: 1rem 2rem;
-        background-color: #2196f3;
-        color: #fff;
-        border-radius: 50px;
-        box-shadow: 0px 5px 18px rgba(48, 68, 247, 0.6);
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 2rem;
-        transition: background 0.3s ease;
-    }
- 
-    .home-content .btn:hover {
-        background-color: #0d47a1;
-    }
- 
-    .social-icons {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 3rem;
-    }
- 
-    .social-icons a {
-        font-size: 2rem;
-        color: #1976d2;
-        background-color: #f0f8ff;
-        padding: 0.8rem;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-    }
- 
-    .social-icons a:hover {
-        background-color: #1976d2;
-        color: #fff;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--netflix-dark);
+      color: var(--netflix-text);
+      overflow-x: hidden;
     }
 
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 4%;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+      transition: background 0.4s;
+    }
+    #navbar.scrolled { background: rgba(20,20,20,0.98); }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--netflix-red);
+      letter-spacing: 3px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--netflix-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: white; }
+
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: rgba(10,10,10,0.98);
+      padding: 1.5rem 4%;
+      z-index: 999;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #mobile-menu.open { display: flex; }
+    #mobile-menu a {
+      color: var(--netflix-muted);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #222;
+      transition: color 0.2s;
+    }
+    #mobile-menu a:hover { color: white; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--netflix-darker);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.3) 100%),
+        linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+      z-index: 1;
+    }
+
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(229,9,20,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(229,9,20,0.05) 0%, transparent 40%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 8%;
+      max-width: 700px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--netflix-red);
+      color: white;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 0.95;
+      color: white;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name span { color: var(--netflix-red); }
+
+    .hero-role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: var(--netflix-muted);
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero-typed {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 2rem;
+      min-height: 1.8rem;
+    }
+    .hero-typed .typed { color: var(--netflix-red); font-weight: 600; }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--netflix-muted);
+    }
+    .hero-meta-item i { color: var(--netflix-red); font-size: 0.8rem; }
+    .hero-exp-badge {
+      background: rgba(229,9,20,0.15);
+      border: 1px solid var(--netflix-red);
+      color: var(--netflix-red);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      padding: 0.25rem 0.75rem;
+      border-radius: 3px;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: white;
+      color: black;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: rgba(255,255,255,0.75); transform: scale(1.02); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(109,109,110,0.7);
+      color: white;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-secondary:hover { background: rgba(109,109,110,0.4); }
+
+    .hero-photo {
+      position: absolute;
+      right: 6%;
+      bottom: 0;
+      z-index: 2;
+      width: clamp(220px, 28vw, 380px);
+    }
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      filter: drop-shadow(-20px 0 40px rgba(0,0,0,0.8));
+    }
+
+    .hero-social {
+      position: absolute;
+      right: 2%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .hero-social a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--netflix-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .hero-social a:hover { border-color: var(--netflix-red); color: var(--netflix-red); }
+
+    /* ── SECTION COMMON ── */
+    .nf-section { padding: 4rem 4% 2rem; }
+
+    .row-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+
+    .row-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .row-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.2rem;
+      background: var(--netflix-red);
+      border-radius: 2px;
+    }
+
+    .row-count {
+      font-size: 0.8rem;
+      color: var(--netflix-red);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .about-card {
+      background: var(--netflix-card);
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 2rem;
+      transition: border-color 0.3s;
+    }
+    .about-card:hover { border-color: var(--netflix-red); }
+
+    .about-card p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--netflix-muted);
+    }
+
+    .about-card p strong { color: white; }
+
+    /* ── TECH STACK ── */
+    .tech-scroll {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .tech-scroll::-webkit-scrollbar { display: none; }
+
+    .tech-chip {
+      flex-shrink: 0;
+      background: var(--netflix-card);
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.2s;
+      min-width: 80px;
+    }
+    .tech-chip:hover { border-color: var(--netflix-red); transform: translateY(-4px); }
+    .tech-chip img { width: 36px; height: 36px; object-fit: contain; }
+    .tech-chip span { font-size: 0.7rem; color: var(--netflix-muted); text-align: center; }
+
+    /* ── HORIZONTAL ROW CARDS ── */
+    .cards-row {
+      display: flex;
+      gap: 0.8rem;
+      overflow-x: auto;
+      padding-bottom: 1.2rem;
+      scrollbar-width: none;
+    }
+    .cards-row::-webkit-scrollbar { display: none; }
+
+    /* ── PROJECT CARDS ── */
+    .project-card {
+      flex-shrink: 0;
+      width: 300px;
+      background: var(--netflix-card);
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .project-card:hover {
+      transform: scale(1.06);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 0 0 1px var(--netflix-red);
+      z-index: 10;
+    }
+    .project-card img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .project-card-body {
+      padding: 0.8rem 1rem 1rem;
+    }
+    .project-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+    .project-card-tag {
+      font-size: 0.72rem;
+      color: var(--netflix-red);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .project-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .project-card:hover .project-card-overlay { opacity: 1; }
+    .project-card-overlay a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--netflix-red);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-card {
+      flex-shrink: 0;
+      width: 280px;
+      background: var(--netflix-card);
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--netflix-red);
+      transform: scaleY(0);
+      transition: transform 0.3s;
+    }
+    .exp-card:hover { border-color: #333; transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+    .exp-card:hover::before { transform: scaleY(1); }
+
+    .exp-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: white;
+      padding: 6px;
+      margin-bottom: 1rem;
+    }
+    .exp-company {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+    .exp-role {
+      font-size: 0.8rem;
+      color: var(--netflix-red);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .exp-period {
+      font-size: 0.75rem;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .exp-period i { font-size: 0.65rem; }
+
+    /* ── EDUCATION ── */
+    .edu-card {
+      background: var(--netflix-card);
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1rem;
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 1.2rem;
+      align-items: start;
+      transition: all 0.3s;
+    }
+    .edu-card:hover { border-color: var(--netflix-red); background: #1e1e1e; }
+    .edu-card img { width: 52px; height: 52px; object-fit: contain; border-radius: 6px; background: white; padding: 4px; }
+    .edu-degree {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+    .edu-inst { font-size: 0.85rem; color: var(--netflix-muted); margin-bottom: 0.4rem; }
+    .edu-courses { font-size: 0.78rem; color: #555; line-height: 1.5; }
+    .edu-year {
+      font-family: 'Barlow Condensed', sans-serif;
+      background: rgba(229,9,20,0.15);
+      border: 1px solid rgba(229,9,20,0.3);
+      color: var(--netflix-red);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      height: fit-content;
+    }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-card {
+      flex-shrink: 0;
+      width: 220px;
+      background: var(--netflix-card);
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 1.2rem;
+      transition: all 0.3s;
+    }
+    .cert-card:hover { border-color: var(--netflix-red); transform: scale(1.03); }
+    .cert-card img { width: 36px; height: 36px; object-fit: contain; margin-bottom: 0.8rem; }
+    .cert-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+    .cert-issuer { font-size: 0.75rem; color: var(--netflix-muted); }
+    .cert-date { font-size: 0.7rem; color: var(--netflix-red); margin-top: 0.4rem; font-weight: 600; }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skill-card {
+      background: var(--netflix-card);
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      transition: all 0.3s;
+    }
+    .skill-card:hover { border-color: var(--netflix-red); transform: translateX(4px); }
+    .skill-icon { font-size: 1.4rem; color: var(--netflix-red); flex-shrink: 0; margin-top: 0.1rem; }
+    .skill-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.2rem;
+    }
+    .skill-desc { font-size: 0.75rem; color: #666; line-height: 1.4; }
+
+    /* ── AWARDS ── */
+    .award-card {
+      background: var(--netflix-card);
+      border: 1px solid #222;
+      border-left: 4px solid var(--netflix-red);
+      border-radius: 0 6px 6px 0;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 0.8rem;
+      transition: all 0.3s;
+    }
+    .award-card:hover { background: #1e1e1e; transform: translateX(6px); }
+    .award-title { font-size: 1rem; font-weight: 700; color: white; margin-bottom: 0.3rem; }
+    .award-org { font-size: 0.8rem; color: var(--netflix-red); margin-bottom: 0.4rem; }
+    .award-desc { font-size: 0.82rem; color: var(--netflix-muted); line-height: 1.5; }
+
+    /* ── HOBBIES ── */
+    .hobby-card {
+      flex-shrink: 0;
+      width: 200px;
+      height: 280px;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .hobby-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .hobby-card:hover img { transform: scale(1.1); }
+    .hobby-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+    .hobby-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* ── VOLUNTEERING ── */
+    .vol-card {
+      background: var(--netflix-card);
+      border: 1px solid #222;
+      border-radius: 6px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      transition: border-color 0.3s;
+    }
+    .vol-card:hover { border-color: var(--netflix-red); }
+    .vol-card img { width: 100%; height: 100%; object-fit: cover; }
+    .vol-body { padding: 2rem; }
+    .vol-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.8rem;
+    }
+    .vol-desc { font-size: 0.9rem; color: var(--netflix-muted); line-height: 1.7; margin-bottom: 1rem; }
+    .vol-list { list-style: none; }
+    .vol-list li {
+      font-size: 0.82rem;
+      color: #777;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #1e1e1e;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .vol-list li::before { content: '▸'; color: var(--netflix-red); flex-shrink: 0; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: linear-gradient(to bottom, var(--netflix-dark), var(--netflix-darker));
+      padding: 5rem 4% 3rem;
+      text-align: center;
+    }
+    .contact-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: 3px;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    .contact-subtitle { font-size: 1.1rem; color: var(--netflix-muted); margin-bottom: 3rem; }
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: var(--netflix-muted);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .contact-item:hover { color: white; }
+    .contact-item i { color: var(--netflix-red); font-size: 1.2rem; }
+
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .social-btn {
+      width: 52px;
+      height: 52px;
+      border: 1px solid #333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--netflix-muted);
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .social-btn:hover { border-color: var(--netflix-red); color: var(--netflix-red); transform: translateY(-3px); }
+
+    .footer-bar {
+      border-top: 1px solid #1e1e1e;
+      padding-top: 2rem;
+      font-size: 0.8rem;
+      color: #444;
+    }
+    .footer-bar span { color: var(--netflix-red); }
+
+    /* ── DIVIDER ── */
+    .nf-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #2a2a2a, transparent);
+      margin: 0 4%;
+    }
+
+    /* ── SCROLL TOP ── */
+    #scrollTop {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 46px;
+      height: 46px;
+      background: var(--netflix-red);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 20px rgba(229,9,20,0.4);
+    }
+    #scrollTop:hover { transform: scale(1.1); }
+
+    /* ── INTERNSHIP ── */
+    .intern-card {
+      background: var(--netflix-card);
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      transition: border-color 0.3s;
+    }
+    .intern-card:hover { border-color: var(--netflix-red); }
+    .intern-card img { width: 60px; height: 60px; object-fit: contain; border-radius: 8px; background: white; padding: 6px; flex-shrink: 0; }
+    .intern-body {}
+    .intern-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; color: white; margin-bottom: 0.2rem; }
+    .intern-company { font-size: 0.85rem; color: var(--netflix-red); margin-bottom: 0.8rem; }
+    .intern-desc { font-size: 0.88rem; color: var(--netflix-muted); line-height: 1.7; }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-    #vanta-globe {
-        flex-direction: column;        /* Stack content vertically */
-        align-items: center;          /* Center everything horizontally */
-        padding: 1rem;                /* Reduce padding for smaller screens */
+      .nav-links { display: none; }
+      #menu-toggle { display: block; }
+      .hero-photo { display: none; }
+      .hero-social { display: none; }
+      .hero-content { max-width: 100%; padding: 0 5%; }
+      .about-grid { grid-template-columns: 1fr; }
+      .vol-card { grid-template-columns: 1fr; }
+      .vol-card img { height: 200px; }
+      .edu-card { grid-template-columns: 1fr; }
+      .edu-card img { display: none; }
     }
 
-    .home-image {
-        margin: 1rem 0;               /* Adjust space around the image */
-        transform: translateY(-50px); /* Maintain the upward shift on mobile too */
+    /* Loading animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
+    .fade-in { animation: fadeInUp 0.6s ease forwards; }
+  </style>
+</head>
+<body>
 
-    .home-image img {
-        width: 200px;
-        height: 300px;
-    }
+  <!-- NAVBAR -->
+  <header>
+    <nav id="navbar">
+      <a href="#hero" class="nav-logo">SAI.DEV</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+    </nav>
+    <nav id="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#skills">Skills</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    .home-content {
-        max-width: 100%;              /* Allow the content to take full width */
-        text-align: center;           /* Center-align text for mobile */
-        margin-top: 1rem;             /* Add slight spacing from image */
-    }
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-particles"></div>
+    <div class="hero-bg"></div>
 
-    .home-content h2 {
-        font-size: 2.5rem;            /* Reduce font size for better fit */
-    }
-
-    .home-content h1 {
-        font-size: 2rem;              /* Adjust name font size */
-    }
-
-    .home-content p {
-        font-size: 1.5rem;            /* Adjust paragraph font size */
-    }
-}
-
- </style>
- 
-<!-- Home Section with Globe Background -->
-<div id="vanta-globe">
-    <!-- Left Content: Image -->
-    <div class="home-image">
-        <img src="assets/img/Suite.jpeg" alt="Sai">
+    <div class="hero-content">
+      <div class="hero-tag"><i class="fas fa-circle" style="font-size:0.5rem;"></i> FEATURED PROFILE</div>
+      <h1 class="hero-name">Sai<br><span>Chatlaparti</span></h1>
+      <div class="hero-role">Data & Analytics Professional</div>
+      <div class="hero-typed">
+        Specializing in <span class="typed"></span>
+      </div>
+      <div class="hero-meta">
+        <span class="hero-exp-badge">8+ YRS EXP</span>
+        <span class="hero-meta-item"><i class="fas fa-map-marker-alt"></i> Virginia, USA</span>
+        <span class="hero-meta-item"><i class="fas fa-building"></i> State of Maryland</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#about" class="btn-primary"><i class="fas fa-play"></i> View Profile</a>
+        <a href="assets/MyCV.pdf" download class="btn-secondary"><i class="fas fa-download"></i> Download CV</a>
+      </div>
     </div>
 
-    <!-- Right Content: Text -->
-    <section id="home" class="home-content">
-        <h2>Hi There,</h2>
-        <h1>I'm Sai Chatlaparti</h1>
-        <p>I am into <span class="typed-text"></span></p>
-        <a href="#about" class="btn">About Me <i class="fas fa-arrow-circle-down"></i></a>
-       
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/saireddychatla123/" aria-label="LinkedIn" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/SaiReddy-123" aria-label="GitHub" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-                     
+    <div class="hero-photo">
+      <img src="assets/img/Suite.jpeg" alt="Sai Chatlaparti">
+    </div>
+
+    <div class="hero-social">
+      <a href="https://www.linkedin.com/in/saireddychatla123/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/SaiReddy-123" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/saich9" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">About Me</h2>
+      <span class="row-count">PROFILE</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <p>With <strong>8+ years of experience</strong> in the data world and IT industry, I have worked on numerous data projects that have honed my ability to see patterns and stories in data. Solving complex problems with a blend of logic and creativity, I excel in decoding trends, optimizing decisions, and driving innovative solutions.</p>
+      </div>
+      <div class="about-card">
+        <p>I'm passionate about <strong>continuous learning</strong>, challenging assumptions, and staying ahead in the data landscape. I thrive where curiosity meets action. Currently pursuing a second Master's degree alongside full-time work to strengthen AI/ML capabilities.</p>
+        <br>
+        <p><strong>Let's transform data into powerful insights and innovative solutions together.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Tech Stack</h2>
+      <span class="row-count">18 TECHNOLOGIES</span>
+    </div>
+    <div class="tech-scroll">
+      <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span>Python</span></div>
+      <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"><span>SQL</span></div>
+      <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"><span>NumPy</span></div>
+      <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"><span>Matplotlib</span></div>
+      <div class="tech-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"><span>Scikit-learn</span></div>
+      <div class="tech-chip"><img src="assets/img/snow.png"><span>Snowflake</span></div>
+      <div class="tech-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"><span>Spark</span></div>
+      <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg"><span>Kafka</span></div>
+      <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><span>Docker</span></div>
+      <div class="tech-chip"><img src="assets/img/aws.svg"><span>AWS</span></div>
+      <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"><span>GCP</span></div>
+      <div class="tech-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"><span>Azure</span></div>
+      <div class="tech-chip"><img src="assets/img/Fabric_final_x256.webp"><span>MS Fabric</span></div>
+      <div class="tech-chip"><img src="assets/img/icons8-power-bi-144.png"><span>Power BI</span></div>
+      <div class="tech-chip"><img src="assets/img/tab1.png"><span>Tableau</span></div>
+      <div class="tech-chip"><img src="assets/img/n12.png"><span>Databricks</span></div>
+      <div class="tech-chip"><img src="assets/img/Apache Airflow.png"><span>Airflow</span></div>
+      <div class="tech-chip"><img src="assets/img/api.png"><span>API</span></div>
+    </div>
+  </section>
+
+  <div class="nf-divider"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Projects</h2>
+      <span class="row-count">5 PROJECTS</span>
+    </div>
+    <div class="cards-row">
+      <div class="project-card">
+        <img src="assets/img/carsales.PNG" alt="Car Sales">
+        <div class="project-card-body">
+          <div class="project-card-title">Car Market Pulse Analysis</div>
+          <div class="project-card-tag">TABLEAU · DASHBOARD</div>
         </div>
+        <div class="project-card-overlay">
+          <a href="https://public.tableau.com/shared/4BHT4GSF4?:display_count=n&:origin=viz_share_link" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="assets/img/tripad.PNG" alt="Trip Advisor">
+        <div class="project-card-body">
+          <div class="project-card-title">Trip Advisor Dashboard</div>
+          <div class="project-card-tag">TABLEAU · ANALYTICS</div>
+        </div>
+        <div class="project-card-overlay">
+          <a href="https://public.tableau.com/views/TriAdvisoryDashboard/Dashboard1" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="assets/img/ERM.PNG" alt="ERM">
+        <div class="project-card-body">
+          <div class="project-card-title">Enterprise Resource Management</div>
+          <div class="project-card-tag">TABLEAU · ENTERPRISE</div>
+        </div>
+        <div class="project-card-overlay">
+          <a href="https://public.tableau.com/app/profile/sai.kumar.reddy.chatlaparti/viz/EnterpriseResourceManagement/Dashboard1" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="assets/img/sqlserver.png" alt="SQL Server">
+        <div class="project-card-body">
+          <div class="project-card-title">SQL Server Project Scripts</div>
+          <div class="project-card-tag">SQL · DATABASE · GITHUB</div>
+        </div>
+        <div class="project-card-overlay">
+          <a href="https://github.com/SaiReddy-123/sqlsai" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="assets/img/Adidasanalysisqs.PNG" alt="Adidas QuickSight">
+        <div class="project-card-body">
+          <div class="project-card-title">Adidas Analysis — AWS QuickSight</div>
+          <div class="project-card-tag">QUICKSIGHT · AWS · BI</div>
+        </div>
+        <div class="project-card-overlay">
+          <a href="https://community.amazonquicksight.com/#Arena-dashboardId=1287cca6-505d-49e0-8e30-ecbf434c6874" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
+        </div>
+      </div>
     </div>
-</div>
+  </section>
 
+  <div class="nf-divider"></div>
 
- 
- <!-- Typed Text Script -->
- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
- <script>
-     var typed = new Typed('.typed-text', {
-         strings: ["Data Analytics", "Python Development","Quicksight Development","Power BI Development","Data Engineering", "Data Visualizations", "Business Intelligence", "Machine Learning", "Cloud Computing", "Big Data Analytics", "Data Warehousing", "ETL Development", "Data Modeling", "Data Governance", "Data Security", "Data Privacy", "Data Compliance", "Data Strategy"],
-         typeSpeed: 50,
-         backSpeed: 30,
-         loop: true
-     });
- </script>
- 
-  
-  <!-- Globe Animation Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Work Experience</h2>
+      <span class="row-count">4 ROLES</span>
+    </div>
+    <div class="cards-row">
+      <div class="exp-card">
+        <img src="assets/img/stateofmd.png" alt="State of MD" class="exp-logo">
+        <div class="exp-company">State of Maryland</div>
+        <div class="exp-role">Amazon QuickSight Developer</div>
+        <div class="exp-period"><i class="fas fa-map-marker-alt"></i> VA, USA</div>
+        <div class="exp-period" style="margin-top:0.2rem;"><i class="fas fa-calendar"></i> Aug 2023 – Present</div>
+      </div>
+      <div class="exp-card">
+        <img src="assets/img/r3tech.jpeg" alt="R3 Tek" class="exp-logo">
+        <div class="exp-company">R3 Tek</div>
+        <div class="exp-role">Business Intelligence Analyst</div>
+        <div class="exp-period"><i class="fas fa-map-marker-alt"></i> New York, USA</div>
+        <div class="exp-period" style="margin-top:0.2rem;"><i class="fas fa-calendar"></i> Feb 2023 – Aug 2023</div>
+      </div>
+      <div class="exp-card">
+        <img src="assets/img/accenture.png" alt="Accenture" class="exp-logo">
+        <div class="exp-company">Accenture</div>
+        <div class="exp-role">BI Developer</div>
+        <div class="exp-period"><i class="fas fa-map-marker-alt"></i> Hyderabad, India</div>
+        <div class="exp-period" style="margin-top:0.2rem;"><i class="fas fa-calendar"></i> Aug 2019 – Aug 2021</div>
+      </div>
+      <div class="exp-card">
+        <img src="assets/img/kfin.jpeg" alt="iTools" class="exp-logo">
+        <div class="exp-company">iTools</div>
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-period"><i class="fas fa-map-marker-alt"></i> Hyderabad, India</div>
+        <div class="exp-period" style="margin-top:0.2rem;"><i class="fas fa-calendar"></i> Sept 2015 – Aug 2019</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nf-divider"></div>
+
+  <!-- EDUCATION -->
+  <section id="education" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Education</h2>
+      <span class="row-count">4 DEGREES</span>
+    </div>
+
+    <div class="edu-card">
+      <img src="assets/img/EIU_Logo.png" alt="IWU">
+      <div>
+        <div class="edu-degree">Masters in Data Analytics</div>
+        <div class="edu-inst">Indiana Wesley University · Indiana, USA</div>
+        <div class="edu-courses">Machine Learning, Deep Learning, NLP, Statistical Modeling, Data Engineering, Cloud AI Services, Predictive Analytics, MLOps, Big Data Analytics</div>
+      </div>
+      <div class="edu-year">Jan 2026 – Present</div>
+    </div>
+
+    <div class="edu-card">
+      <img src="assets/img/EIU_Logo.png" alt="EIU">
+      <div>
+        <div class="edu-degree">Masters in Information Technologies</div>
+        <div class="edu-inst">Eastern Illinois University · GPA 4.0 · Illinois, USA</div>
+        <div class="edu-courses">Decision Theory, Data Analytics, Project Management, Web Development, Networking, Cloud Computing, Global Business Strategies</div>
+      </div>
+      <div class="edu-year">Jan – Dec 2022</div>
+    </div>
+
+    <div class="edu-card">
+      <img src="assets/img/avniet.png" alt="AVN">
+      <div>
+        <div class="edu-degree">B.Tech in Computer Science & Engineering</div>
+        <div class="edu-inst">AVN Institute of Engineering and Technology · Hyderabad, India</div>
+        <div class="edu-courses">Data Structures, Algorithms, Database Management, AI, Cloud Computing, Cybersecurity, Python, Java</div>
+      </div>
+      <div class="edu-year">Sept 2012 – May 2016</div>
+    </div>
+
+    <div class="edu-card">
+      <img src="assets/img/Narayana.jpeg" alt="Narayana">
+      <div>
+        <div class="edu-degree">Higher Secondary – MPC</div>
+        <div class="edu-inst">Narayana Junior College · Hyderabad, India · GPA: 92%</div>
+        <div class="edu-courses">Advanced Calculus, Algebra, Mechanics, Electromagnetism, Organic Chemistry, Probability & Statistics</div>
+      </div>
+      <div class="edu-year">May 2009 – May 2011</div>
+    </div>
+  </section>
+
+  <div class="nf-divider"></div>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Professional Certifications</h2>
+      <span class="row-count">6 CERTS</span>
+    </div>
+    <div class="cards-row">
+      <div class="cert-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+        <div class="cert-name">Python for Data Engineering</div>
+        <div class="cert-issuer">Udemy</div>
+        <div class="cert-date">Nov 2024</div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/img/database.png">
+        <div class="cert-name">SQL for Data Engineering</div>
+        <div class="cert-issuer">HackerRank</div>
+        <div class="cert-date">Feb 2024</div>
+      </div>
+      <div class="cert-card">
+        <img src="https://img.icons8.com/color/48/000000/tableau-software.png">
+        <div class="cert-name">Tableau Essential Training</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Nov 2024</div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/img/snow.png">
+        <div class="cert-name">Data Warehouse with Snowflake</div>
+        <div class="cert-issuer">Snowflake</div>
+        <div class="cert-date">Dec 2024</div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/img/dbt.jpeg">
+        <div class="cert-name">dbt Fundamentals</div>
+        <div class="cert-issuer">dbt Labs</div>
+        <div class="cert-date">Dec 2024</div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/img/aws.svg">
+        <div class="cert-name">AWS Cloud Practitioner</div>
+        <div class="cert-issuer">Amazon</div>
+        <div class="cert-date">Jan 2025</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nf-divider"></div>
+
+  <!-- VOLUNTEERING -->
+  <section id="volunteering" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Community & Volunteering</h2>
+      <span class="row-count">COMMUNITY</span>
+    </div>
+    <div class="vol-card">
+      <img src="assets/img/covid.jpeg" alt="Vaccine Awareness">
+      <div class="vol-body">
+        <div class="vol-title">Vaccine Awareness Campaign</div>
+        <p class="vol-desc">Actively contributed to local efforts in raising awareness about COVID-19 vaccination and safety measures. Worked closely with public health organizations to support educational initiatives and reduce vaccine hesitancy.</p>
+        <ul class="vol-list">
+          <li>Community Engagement — addressed concerns and encouraged vaccination with local organizations</li>
+          <li>Organized informational sessions, distributed flyers, managed community outreach programs</li>
+          <li>Vaccination Drive Support — provided logistical support for health officials</li>
+          <li>Door-to-Door Outreach — distributed literature and answered COVID-19 prevention questions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="nf-divider"></div>
+
+  <!-- INTERNSHIP -->
+  <section id="internships" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Internship Highlights</h2>
+      <span class="row-count">EARLY CAREER</span>
+    </div>
+    <div class="intern-card">
+      <img src="assets/img/avj.png" alt="AVJ Solutions">
+      <div class="intern-body">
+        <div class="intern-title">Data Science & BI Intern</div>
+        <div class="intern-company">AVJ Solutions · May 2022 – July 2022</div>
+        <p class="intern-desc">Gained hands-on experience in data science and business intelligence working with cross-functional teams to analyze business data, optimize processes, and provide actionable insights. Conducted data analysis to identify trends and supported data preparation and cleaning efforts to ensure data integrity and consistency.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="nf-divider"></div>
+
+  <!-- HOBBIES -->
+  <section id="hobbies" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Beyond Work</h2>
+      <span class="row-count">LIFESTYLE</span>
+    </div>
+    <div class="cards-row">
+      <div class="hobby-card">
+        <img src="assets/img/gym.jpg" alt="Gym">
+        <div class="hobby-overlay"><span class="hobby-label">Gym 🏋️</span></div>
+      </div>
+      <div class="hobby-card">
+        <img src="assets/img/IMG_1368.WEBP" alt="Journaling">
+        <div class="hobby-overlay"><span class="hobby-label">Journaling & Coffee ☕</span></div>
+      </div>
+      <div class="hobby-card">
+        <img src="assets/img/hikesai.jpeg" alt="Hiking">
+        <div class="hobby-overlay"><span class="hobby-label">Hiking ⛰️</span></div>
+      </div>
+      <div class="hobby-card">
+        <img src="assets/img/p3.jpg" alt="Cooking">
+        <div class="hobby-overlay"><span class="hobby-label">Cooking 🍳</span></div>
+      </div>
+      <div class="hobby-card">
+        <img src="assets/img/p4.jpg" alt="Plant Parenting">
+        <div class="hobby-overlay"><span class="hobby-label">Plant Parenting 🌱</span></div>
+      </div>
+      <div class="hobby-card">
+        <img src="assets/img/cricket.webp" alt="Cricket">
+        <div class="hobby-overlay"><span class="hobby-label">Cricket 🏏</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nf-divider"></div>
+
+  <!-- SKILLS -->
+  <section id="skills" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Core Competencies</h2>
+      <span class="row-count">6 SKILLS</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fas fa-lightbulb skill-icon"></i>
+        <div>
+          <div class="skill-name">Problem-Solving</div>
+          <div class="skill-desc">Innovative thinker who loves tackling complex challenges with creative, data-driven solutions.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-users skill-icon"></i>
+        <div>
+          <div class="skill-name">Leadership & Collaboration</div>
+          <div class="skill-desc">Strong focus on teamwork, collaboration, and driving shared success.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-chart-line skill-icon"></i>
+        <div>
+          <div class="skill-name">Analytical Thinking</div>
+          <div class="skill-desc">Turning complex data into actionable insights that drive impactful business decisions.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-comments skill-icon"></i>
+        <div>
+          <div class="skill-name">Communication Skills</div>
+          <div class="skill-desc">Storytelling with data, delivering clear insights, facilitating strategic discussions.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-sync-alt skill-icon"></i>
+        <div>
+          <div class="skill-name">Adaptability & Learning</div>
+          <div class="skill-desc">Continuously evolving with emerging trends, adapting quickly to new technologies.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-paint-brush skill-icon"></i>
+        <div>
+          <div class="skill-name">Creativity & Innovation</div>
+          <div class="skill-desc">Bringing fresh ideas and innovative solutions to projects and problem-solving scenarios.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nf-divider"></div>
+
+  <!-- AWARDS -->
+  <section id="awards" class="nf-section">
+    <div class="row-header">
+      <h2 class="row-title">Awards & Achievements</h2>
+      <span class="row-count">3 AWARDS</span>
+    </div>
+    <div class="award-card">
+      <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;">
+        <i class="fas fa-medal" style="color:var(--netflix-red);font-size:1.2rem;"></i>
+        <div class="award-title">Best Employee Award – Process Automation</div>
+      </div>
+      <div class="award-org">KFin Technology · 2017</div>
+      <div class="award-desc">Received the Best Employee Award for automating 80% of manual processes using Power BI and SQL Server, significantly enhancing efficiency and reducing manual effort.</div>
+    </div>
+    <div class="award-card">
+      <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;">
+        <i class="fas fa-award" style="color:var(--netflix-red);font-size:1.2rem;"></i>
+        <div class="award-title">Excellence in Data Visualization</div>
+      </div>
+      <div class="award-org">Accenture · 2020</div>
+      <div class="award-desc">Created impactful dashboards leading to improved business insights and decision-making across the organization.</div>
+    </div>
+    <div class="award-card">
+      <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;">
+        <i class="fas fa-running" style="color:var(--netflix-red);font-size:1.2rem;"></i>
+        <div class="award-title">Endurance Athlete Recognition</div>
+      </div>
+      <div class="award-org">MINDSPACE EcoRun Hyderabad</div>
+      <div class="award-desc">Recognized for completing multiple long-distance running events, demonstrating commitment and endurance.</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-title">LET'S CONNECT</div>
+    <p class="contact-subtitle">Data speaks. We just make it sing 🎵📊</p>
+
+    <div class="contact-grid">
+      <a href="mailto:saireddy.chatla@gmail.com" class="contact-item">
+        <i class="fas fa-envelope"></i> saireddy.chatla@gmail.com
+      </a>
+      <span class="contact-item">
+        <i class="fas fa-map-marker-alt"></i> Virginia, USA
+      </span>
+    </div>
+
+    <div class="social-row">
+      <a href="https://www.linkedin.com/in/saireddychatla123/" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/SaiReddy-123" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/saich9" target="_blank" class="social-btn"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <div style="margin-bottom:2rem;">
+      <a href="assets/MyCV.pdf" download class="btn-primary" style="display:inline-flex;">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
+    </div>
+
+    <div class="footer-bar">
+      © 2025 <span>Sai Chatlaparti</span> · All Rights Reserved · Built with ❤️ and Data
+    </div>
+  </section>
+
+  <!-- SCROLL TOP -->
+  <button id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+
   <script>
-    VANTA.GLOBE({
-      el: "#vanta-globe",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x3b82f6,
-      color2: 0x2563eb,
-      backgroundColor: 0xf1f5f9
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      const btn = document.getElementById('scrollTop');
+      btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
     });
-  </script>
-  
-  <!-- Double Line Break -->
-   <div class="w-full border-t dark:border-blue-500 my-2"></div>
 
-
-<!-- About Section -->
-<section id="about" class="py-20 bg-[#E3F2FD]"> <!-- Deep Charcoal -->
-    <div class="max-w-5xl mx-auto px-4">
-        <h2 class="section-title" data-aos="fade-up" data-aos-duration="1200">About Me</h2>
-        
-        <!-- Content Box with Animation -->
-        <div class="content-box p-12 bg-gradient-to-r from-[#BBDEFB] to-[#90CAF9] dark:from-gray-700 dark:to-gray-800 shadow-2xl rounded-3xl max-w-6xl mx-auto font-[Inter] leading-relaxed text-gray-700 dark:text-gray-300 text-lg" data-aos="fade-up" data-aos-duration="1500">
-    <p class="mb-4">
-       With 8+ years of experience in the data world and IT industry, I have worked on numerous data projects that have honed my ability to see patterns and stories in data. Solving complex problems with a blend of logic and creativity, I excel in decoding trends, optimizing decisions, and driving innovative solutions.
-    </p>
-    <p class="mb-4">
-       I'm passionate about continuous learning, challenging assumptions, and staying ahead in the data landscape. I thrive where curiosity meets action.
-    </p>
-   
-    <p>
-        <strong>Let's transform data into powerful insights and innovative solutions together. Ready to make a difference? Let's connect! </strong>
-    </p>
-</div>
-        
-        <!-- Tech Stack Section with Animations -->
-        <div class="max-w-6xl mx-auto px-4 mt-10">
-            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Tech Stack</h2>
-            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center" data-aos="zoom-in" data-aos-duration="1500">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-16 h-16">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="SQL" class="w-16 h-16">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="w-16 h-16">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="w-16 h-16">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" class="w-16 h-16">
-                <img src="assets/img/snow.png" alt="Snowflake" class="w-16 h-16">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" alt="Apache Spark" class="w-16 h-16">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Apache Kafka" class="w-16 h-16">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-16 h-16">
-                <img src="assets/img/aws.svg" alt="AWS" class="w-16 h-16">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" class="w-16 h-16">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" class="w-16 h-16">
-                <img src="assets/img/Fabric_final_x256.webp" alt="Microsoft Fabric" class="w-16 h-16">
-                <img src="assets/img/icons8-power-bi-144.png" alt="Power BI" class="w-16 h-16">
-                <img src="assets/img/tab1.png" alt="Tableau" class="w-16 h-16">
-                <img src="assets/img/n12.png" alt="Databricks" class="w-16 h-16">
-                <img src="assets/img/Apache Airflow.png" alt="Airflow" class="w-16 h-16">                
-                <img src="assets/img/api.png" alt="API" class="w-16 h-16">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- AOS Animation Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    once: true,  // Animation happens only once when you scroll into view
-    offset: 200  // Adjusts when the animation triggers (200px before the section hits the viewport)
-  });
-</script>
-
-</body>
-</html>
-<!--
-<!-- Portfolio Section -->
-<section id="portfolio" class="py-20 bg-[#F5F5F5] dark:bg-[#1E293B]"> <!-- Off-White / Dark Slate -->
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-blue-600 dark:text-blue-300 mb-12" data-aos="fade-up" data-aos-duration="1000"> Projects </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-           
-       
-        
-    <!-- Project 1 -->
-            <div class="relative group transition-transform duration-700 hover:scale-105 hover:rotate-1" data-aos="fade-up" data-aos-duration="1000">
-                <img src="assets/img/carsales.PNG" alt="Car Sales Project" class="w-full object-cover aspect-[16/9] rounded-xl shadow-2xl transition-all duration-700 group-hover:scale-110 group-hover:brightness-110">
-                <a href="https://public.tableau.com/shared/4BHT4GSF4?:display_count=n&:origin=viz_share_link" target="_blank"
-                   class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 rounded-xl">
-                    <span class="text-white text-lg font-semibold">Read More</span>
-                </a>
-                <h3 class="text-center text-xl font-medium mt-4 text-blue-600 dark:text-blue-300">Car Market Pulse Analysis Dashboard</h3>
-            </div>
-    
-            <!-- Project 2 -->
-            <div class="relative group transition-transform duration-700 hover:scale-105 hover:rotate-1" data-aos="fade-up" data-aos-duration="1100">
-                <img src="assets/img/tripad.PNG" alt="Trip Advisor" class="w-full object-cover aspect-[16/9] rounded-xl shadow-2xl transition-all duration-700 group-hover:scale-110 group-hover:brightness-110">
-                <a href="https://public.tableau.com/views/TriAdvisoryDashboard/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank"
-                   class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 rounded-xl">
-                    <span class="text-white text-lg font-semibold">Read More</span>
-                </a>
-                <h3 class="text-center text-xl font-medium mt-4 text-blue-600 dark:text-blue-300">Trip Advisor Dashboard</h3>
-            </div>
-    
-            <!-- Project 3 -->
-            <div class="relative group transition-transform duration-700 hover:scale-105 hover:rotate-1" data-aos="fade-up" data-aos-duration="1200">
-                <img src="assets/img/ERM.PNG" alt="Enterprise Resource Management" class="w-full object-cover aspect-[16/9] rounded-xl shadow-2xl transition-all duration-700 group-hover:scale-110 group-hover:brightness-110">
-                <a href="https://public.tableau.com/app/profile/sai.kumar.reddy.chatlaparti/viz/EnterpriseResourceManagement/Dashboard1" target="_blank"
-                   class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 rounded-xl">
-                    <span class="text-white text-lg font-semibold">Read More</span>
-                </a>
-                <h3 class="text-center text-xl font-medium mt-4 text-blue-600 dark:text-blue-300">Enterprise Resource Management Dashboard</h3>
-            </div>
-    
-            <!-- Project 4 -->
-            <div class="relative group transition-transform duration-700 hover:scale-105 hover:rotate-1" data-aos="fade-up" data-aos-duration="1300">
-                <img src="assets/img/sqlserver.png" alt="Sql Server Project" class="w-full object-cover aspect-[16/9] rounded-xl shadow-2xl transition-all duration-700 group-hover:scale-110 group-hover:brightness-110">
-                <a href="https://github.com/SaiReddy-123/sqlsai" target="_blank"
-                   class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 rounded-xl">
-                    <span class="text-white text-lg font-semibold">Read More</span>
-                </a>
-                <h3 class="text-center text-xl font-medium mt-4 text-blue-600 dark:text-blue-300">SQL Server Project Scripts</h3>
-            </div>
-    
-            <!-- Project 5 -->
-            <div class="relative group transition-transform duration-700 hover:scale-105 hover:rotate-1" data-aos="fade-up" data-aos-duration="1400">
-                <img src="assets/img/Adidasanalysisqs.PNG" alt="Streamlit Dashboard Project" class="w-full object-cover aspect-[16/9] rounded-xl shadow-2xl transition-all duration-700 group-hover:scale-110 group-hover:brightness-110">
-                <a href="https://community.amazonquicksight.com/#Arena-dashboardId=1287cca6-505d-49e0-8e30-ecbf434c6874&authorId=CU-8957" target="_blank"
-                   class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 rounded-xl">
-                    <span class="text-white text-lg font-semibold">Read More</span>
-                </a>
-                <h3 class="text-center text-xl font-medium mt-4 text-blue-600 dark:text-blue-300">Adidas Analysis by AWS Quicksight </h3>
-            </div>
-    
-            
-        
-    </div>
-     </div>
-    
-</section>
-
-<!-- AOS Initialization -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    once: true,
-    offset: 150,
-    duration: 1000,
-  });
-</script>
-
-<!-- Work Experience Section -->
-<section id="experience" class="py-20 bg-[#64B5F6]"> <!-- Slate Gray -->
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-white dark:text-blue-300 mb-12" data-aos="fade-down">Work Experience</h2>
-        <div class="relative">
-            <!-- Vertical Timeline Line -->
-            <div class="absolute left-12 top-0 h-full border-l-4 border-blue-500"></div>
-
-            <!-- Experience 1 -->
-            <div class="relative pl-32 mb-12" data-aos="fade-right">
-                <div class="absolute left-0 flex items-center justify-center w-24 h-24 bg-white dark:bg-gray-700 rounded-full shadow-lg">
-                    <img src="assets/img/stateofmd.png" alt="Cafe Landwer Logo" class="w-16 h-16 rounded-full">
-                </div>
-                <div class="p-8 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl">
-                    <h3 class="text-2xl font-semibold text-blue-600 dark:text-blue-300">State of Maryland</h3>
-                    <p class="text-base text-gray-500 dark:text-gray-300"> Amazon Quicksight Developer|VA, USA|Aug 2023 - Present</p>
-                    
-                </div>
-            </div>
-
-            <!-- Experience 2 -->
-            <div class="relative pl-32 mb-12" data-aos="fade-left">
-                <div class="absolute left-0 flex items-center justify-center w-24 h-24 bg-white dark:bg-gray-700 rounded-full shadow-lg">
-                    <img src="assets/img/r3tech.jpeg" alt="Clear Tax Logo" class="w-16 h-16 rounded-full">
-                </div>
-                <div class="p-8 bg-gray-50 dark:bg-gray-600 rounded-3xl shadow-2xl">
-                    <h3 class="text-2xl font-semibold text-blue-600 dark:text-blue-300">R3 Tek</h3>
-                    <p class="text-base text-gray-500 dark:text-gray-300">BusinessIntelligence Analyst|New york, USA| Feb 2023 - Aug 2023</p>
-                    
-                </div>
-            </div>
-
-            <!-- Experience 3 -->
-            <div class="relative pl-32 mb-12" data-aos="fade-right">
-                <div class="absolute left-0 flex items-center justify-center w-24 h-24 bg-white dark:bg-gray-700 rounded-full shadow-lg">
-                    <img src="assets/img/accenture.png" alt="Million Minds Infotech Logo" class="w-16 h-16 rounded-full">
-                </div>
-                <div class="p-8 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl">
-                    <h3 class="text-2xl font-semibold text-blue-600 dark:text-blue-300">Accenture</h3>
-                    <p class="text-base text-gray-500 dark:text-gray-300">BI Developer|Hyderabad, India| Aug 2019 - Aug 2021</p>
-                    
-                </div>
-            </div>
-
-            <!-- Experience 4 -->
-            <div class="relative pl-32 mb-12" data-aos="fade-left">
-                <div class="absolute left-0 flex items-center justify-center w-24 h-24 bg-white dark:bg-gray-700 rounded-full shadow-lg">
-                    <img src="assets/img/kfin.jpeg" alt="Villgro Innovations Foundation Logo" class="w-16 h-16 rounded-full">
-                </div>
-                <div class="p-8 bg-gray-50 dark:bg-gray-600 rounded-3xl shadow-2xl">
-                    <h3 class="text-2xl font-semibold text-blue-600 dark:text-blue-300">iTools </h3>
-                    <p class="text-base text-gray-500 dark:text-gray-300">Software Engineer|Hyderabad, India| Sept 2015 - Aug 2019</p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Initialize AOS Animations -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-<!-- Education Section -->
-<section id="education" class="py-20 bg-[#E3F2FD]">
-    <div class="max-w-4xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-blue-700 dark:text-blue-300 mb-12" data-aos="zoom-in-up" data-aos-duration="1000">Education</h2>
-
-        <div id="education-cards" class="relative">
-            <!-- Masters Card -->
-            <div class="education-card p-10 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl transform transition duration-500 animate-fade-in-up" data-aos="fade-right" data-aos-duration="1500">
-                <div class="flex items-center mb-6">
-                    <img src="assets/img/EIU_Logo.png" alt="The Climber Logo" class="w-16 h-16 mr-5 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-semibold text-blue-700 dark:text-blue-300">Masters in Data Analytics</h3>
-                    <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Jan 2026 - Present</span>
-                </div>
-                <p class="text-lg text-gray-500 dark:text-gray-300 mb-4">Indiana Wesley University |Indiana, USA</p>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">Pursuing a second Master’s degree alongside full-time work to strengthen AI/ML capabilities in data analytics and build intelligent, predictive BI solutions.
- </p>
-                <ul class="list-disc pl-6 mt-5 space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                    <li><strong>Courses:</strong> Machine Learning, Deep Learning, Natural Language Processing, Statistical Modeling, Data Engineering, Cloud AI Services, Predictive Analytics, Data Mining, MLOps, Big Data Analytics
-</li>
-    
-            </ul>
-                <button class="next-education absolute right-4 bottom-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-
-        <div id="education-cards" class="relative">
-            <!-- Masters Card -->
-            <div class="education-card p-10 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl transform transition duration-500 animate-fade-in-up" data-aos="fade-right" data-aos-duration="1500">
-                <div class="flex items-center mb-6">
-                    <img src="assets/img/EIU_Logo.png" alt="The Climber Logo" class="w-16 h-16 mr-5 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-semibold text-blue-700 dark:text-blue-300">Masters in Information Technologies</h3>
-                    <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Jan 2022 - Dec 2022</span>
-                </div>
-                <p class="text-lg text-gray-500 dark:text-gray-300 mb-4">Eastern Illinois University |GPA 4|Illinois, USA</p>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">Graduated with a focus on Data Analytics, gaining expertise in data collection, processing, statistical analysis, and visualization to support informed decision-making. This program strengthened my ability to build predictive models, improve business processes, and develop data-driven strategies.</p>
-                <ul class="list-disc pl-6 mt-5 space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                    <li><strong>Courses:</strong> Decision Theory, Data Analytics, Project Management, Web Development, Networking, Cloud Computing and  Global Business Strategies</li>
-    
-            </ul>
-                 <button class="prev-education absolute left-4 bottom-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-                <button class="next-education absolute right-4 bottom-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-
-            <!-- Bachelor Card (Initially Hidden) -->
-            <div class="education-card p-10 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl transform transition duration-500 hidden" data-aos="fade-left" data-aos-duration="1500">
-                <div class="flex items-center mb-6">
-                    <img src="assets/img/avniet.png" alt="The Climber Logo" class="w-16 h-16 mr-5 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-semibold text-blue-700 dark:text-blue-300">Bachelor of Technology (B.Tech) in Computer Science and Engineering</h3>
-                    <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Sept 2012 - May 2016 </span>
-                </div>
-                <p class="text-lg text-gray-500 dark:text-gray-300 mb-4">AVN Institute of Engineering and Technology | Hyderabad, India</p>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">Graduated with a strong focus on core computer science concepts, software development, and advanced computing technologies. This program provided in-depth knowledge of data structures, algorithms, database management, artificial intelligence, cloud computing, and cybersecurity. Equipped with hands-on experience in programming, system design, and data-driven problem-solving, enabling me to develop scalable and efficient technology solutions.</p>
-                <ul class="list-disc pl-6 mt-5 space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                    <li><strong>Courses:</strong> Built expertise at the intersection of technology and business, mastering web development, programming (Python, Java, HTML, CSS), database systems, and information security.
-                        Enhanced skills in software engineering, project management, and financial analysis. </li>
-                    
-                </ul>
-                <button class="prev-education absolute left-4 bottom-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-                <button class="next-education absolute right-4 bottom-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-
-            <!-- Narayana Junior College Card -->
-            <div class="education-card p-10 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl transform transition duration-500 hidden" data-aos="fade-right" data-aos-duration="1500">
-                <div class="flex items-center mb-6">
-                    <img src="assets/img/Narayana.jpeg" alt="Sri Chaitanya Logo" class="w-16 h-16 mr-5 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-semibold text-blue-700 dark:text-blue-300">Higher Secondary Education - MPC</h3>
-                    <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">May 2009 - May 2011</span>
-                </div>
-                <p class="text-lg text-gray-500 dark:text-gray-300 mb-4">Narayana Junior College | Hyderabad, India | GPA: 92%</p>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg"> Completed the MPC (Mathematics, Physics, Chemistry) program, a rigorous curriculum focused on engineering and technical education. Achieved a perfect score in Mathematics in the final exams for both 11th and 12th grade—the highest ever recorded at the institution.</p>
-                <ul class="list-disc pl-6 mt-5 space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                    <li><strong>Courses:</strong> Advanced Calculus, Algebra, Mechanics, Electromagnetism, Organic & Inorganic Chemistry, Probability & Statistics, Sanskrit. </li>
-                                    </ul>
-                <button class="prev-education absolute left-4 bottom-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- JavaScript for Navigation -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const cards = document.querySelectorAll(".education-card");
-        let currentIndex = 0;
-
-        function showCard(index) {
-            cards.forEach((card, i) => {
-                card.classList.toggle("hidden", i !== index);
-            });
-
-            document.querySelectorAll(".prev-education").forEach(btn => btn.style.display = index === 0 ? "none" : "block");
-            document.querySelectorAll(".next-education").forEach(btn => btn.style.display = index === cards.length - 1 ? "none" : "block");
-        }
-
-        document.querySelectorAll(".next-education").forEach(button => {
-            button.addEventListener("click", function () {
-                if (currentIndex < cards.length - 1) {
-                    currentIndex++;
-                    showCard(currentIndex);
-                }
-            });
-        });
-
-        document.querySelectorAll(".prev-education").forEach(button => {
-            button.addEventListener("click", function () {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    showCard(currentIndex);
-                }
-            });
-        });
-
-        showCard(currentIndex);
+    // Scroll top
+    document.getElementById('scrollTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-</script>
 
-</section>
-
-
-<!-- Swiper.js for sliding effect -->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-    const swiper = new Swiper('.swiper-container', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        effect: 'slide',
-        spaceBetween: 20,
+    // Mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('open');
     });
-</script>
 
-<!-- Certifications section starts here -->
-<section id="certifications" class="py-20 bg-[#FE2EAFC]"> <!-- Light Gray / Charcoal -->
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-blue-600 dark:text-blue-300 mb-12" data-aos="fade-down">Professional Certifications</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-       
-            <!-- Certification 1 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform transition-transform duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="300">
-                <div class="flex items-center mb-4">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-10 h-10 mr-3">
-                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">Python for Data Engineering</h3>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300">Issued by <strong>Udemy</strong></p>
-                <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Nov 2024</span>
-            </div>
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.remove('open');
+      });
+    });
 
-            <!-- Certification 2 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform transition-transform duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="400">
-                <div class="flex items-center mb-4">
-                    <img src="assets/img/database.png" alt="SQL" class="w-10 h-10 mr-3">
-                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">SQL for Data Engineering</h3>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300">Issued by <strong>HackerRank</strong></p>
-                <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Feb 2024</span>
-            </div>
-
-            <!-- Certification 3 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform transition-transform duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="500">
-                <div class="flex items-center mb-4">
-                    <img src="https://img.icons8.com/color/48/000000/tableau-software.png" alt="Tableau" class="w-10 h-10 mr-3">
-                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">Tableau Essential Training</h3>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300">Issued by <strong>LinkedIn</strong></p>
-                <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Nov 2024</span>
-            </div>
-
-            <!-- Certification 4 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform transition-transform duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
-                <div class="flex items-center mb-4">
-                    <img src="assets/img/snow.png" alt="Snowflake" class="w-10 h-10 mr-3">
-                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">Data Warehouse with Snowflake</h3>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300">Issued by <strong>Snowflake</strong></p>
-                <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Dec 2024</span>
-            </div>
-            
-            <!-- Certification 5 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform transition-transform duration-500 hover:scale-105" data-aos="zoom-in">
-                <div class="flex items-center mb-4">
-                    <img src="assets/img/dbt.jpeg" alt="Apache Airflow" class="w-10 h-10 mr-3">
-                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">dbt Fundamentals</h3>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300">Issued by <strong>dbt Labs</strong></p>
-                <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Dec 2024</span>
-            </div>
-
-            <!-- Certification 6 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform transition-transform duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
-                <div class="flex items-center mb-4">
-                    <img src="assets/img/aws.svg" alt="Apache Spark" class="w-10 h-10 mr-3">
-                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">AWS Cloud Practitioner</h3>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300">Issued by <strong>Amazon</strong></p>
-                <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Jan 2025</span>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Initialize AOS Animations -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-<!-- Volunteer section starts here -->
-<section id="volunteering" class="py-20 bg-[#0F766E] dark:bg-[#115E59]"> <!-- Teal Accent -->
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-white dark:text-blue-300 mb-12" data-aos="fade-up">Vaccine Awareness Campaign</h2>
-        <div class="space-y-12">
-
-            <!-- Volunteer Experience 1 -->
-            <div class="flex flex-col md:flex-row items-center md:items-start bg-white dark:bg-gray-700 rounded-3xl shadow-2xl p-8" data-aos="fade-right">
-                <img src="assets/img/covid.jpeg" alt="Door Step School" class="w-full md:w-1/3 h-auto rounded-2xl shadow-lg mb-6 md:mb-0 md:mr-8">
-                <div class="text-gray-700 dark:text-gray-300">
-                    <h3 class="text-2xl font-semibold text-blue-600 dark:text-blue-300 mb-4">Vaccine Awareness Campaign</h3>
-                    <p class="mb-4 leading-relaxed">Actively contributed to local efforts in raising awareness about the importance of COVID-19 vaccination and safety measures within the community. Worked closely with public health organizations to support educational initiatives and ensure widespread understanding of vaccine benefits, aimed at reducing vaccine hesitancy and promoting public health.</p>
-                    <ul class="list-disc pl-6 space-y-3">
-                        <li><strong>Community Engagement:</strong> Volunteered with local organizations to promote COVID-19 vaccine awareness in the community, engaging with residents to address concerns and encourage vaccination.</li>
-                        <li><strong>Organizing Awareness Events:</strong> Assisted in organizing informational sessions, distributing flyers, and managing community outreach programs to educate the public on vaccine safety and efficacy.</li>
-                        <li><strong>Vaccination Drive Support:</strong> Worked with health officials to facilitate vaccination drives, providing logistical support and helping ensure smooth operations.</li>
-                        <li><strong>Door-to-Door Outreach:</strong> Engaged in door-to-door awareness efforts, distributing literature and answering questions about COVID-19 prevention measures.</li>
-                    </ul>
-                    
-                </div>
-            </div>
-
-          
-
-          
-
-        </div>
-    </div>
-</section>
-
-<!-- Initialize AOS Animations -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-<!--Internship section starts here -->
-<section id="internships" class="py-20 bg-[#F9FAFB] dark:bg-[#2D2D2D]"> <!-- Very Light Gray / Dark Gray -->
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-blue-600 dark:text-blue-300 mb-12" data-aos="fade-up">
-            Internship Highlights
-        </h2>
-
-        <div id="internship-cards" class="relative">
-
-            <!-- Internship 1 Card -->
-            <div class="internship-card p-10 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl transform transition duration-500 animate-fade-in-up">
-                <div class="flex items-center mb-6">
-                    <img src="assets/img/avj.png" alt="The Climber Logo" class="w-16 h-16 mr-5 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-semibold text-blue-600 dark:text-blue-300">Data Science and BI Intern</h3>
-                </div>
-                <p class="text-lg text-gray-500 dark:text-gray-300 mb-4">AVJ Solutions | May 2022 - July 2022</p>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                    Gained hands-on experience in data science and business intelligence by working with cross-functional teams to analyze business data, optimize processes, and provide actionable insights to drive decision-making.
-                </p>
-                <ul class="list-disc pl-6 mt-5 space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                    <li><strong>Data Analysis:</strong> Conducted data analysis to identify trends and insights, helping inform business strategies and decision-making processes.</li>
-                    <li><strong>Data Cleansing and Preprocessing: </strong> Supported data preparation and cleaning efforts, ensuring data integrity and consistency for analysis</li>
-     
-                </ul>
-               
-                
-            </div>
-
-            
-
-        </div>
-    </div>
-
-    <!-- JavaScript to Toggle Cards -->
-    <script>
-        document.getElementById('next-internship').addEventListener('click', function() {
-            const cards = document.querySelectorAll('.internship-card');
-            cards[0].classList.add('hidden');
-            cards[1].classList.remove('hidden');
-        });
-
-        document.getElementById('prev-internship').addEventListener('click', function() {
-            const cards = document.querySelectorAll('.internship-card');
-            cards[1].classList.add('hidden');
-            cards[0].classList.remove('hidden');
-        });
-    </script>
-</section>
-
-
-<!-- Initialize AOS Animations -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-<!-- Beyond Work Section -->
-<section id="beyondwork" class="py-20 bg-[#FEF3C7] dark:bg-[#F59E0B]"> <!-- Soft Amber Accent -->
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-blue-600 dark:text-blue-300 mb-12" data-aos="fade-up">Beyond Work</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-
-            <!-- Hobby 1 -->
-            <div class="overflow-hidden rounded-3xl shadow-xl transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-                <img src="assets/img/gym.jpg" alt="Running" class="w-full h-72 object-cover">
-                <div class="p-4 bg-white dark:bg-gray-700 text-center">
-                    <p class="text-gray-800 dark:text-gray-200 text-lg font-semibold">Gym🏃‍♀️</p>
-                </div>
-            </div>
-
-            <!-- Hobby 2 -->
-            <div class="overflow-hidden rounded-3xl shadow-xl transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-                <img src="assets/img/IMG_1368.WEBP" alt="Journaling" class="w-full h-72 object-cover">
-                <div class="p-4 bg-white dark:bg-gray-700 text-center">
-                    <p class="text-gray-800 dark:text-gray-200 text-lg font-semibold">Journaling & a good brew ☕</p>
-                </div>
-            </div>
-
-            <!-- Hobby 3 -->
-            <div class="overflow-hidden rounded-3xl shadow-xl transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="300">
-                <img src="assets/img/hikesai.jpeg" alt="Hiking Trails" class="w-full h-72 object-cover">
-                <div class="p-4 bg-white dark:bg-gray-700 text-center">
-                    <p class="text-gray-800 dark:text-gray-200 text-lg font-semibold">Hiking Trails ⛰️</p>
-                </div>
-            </div>
-
-            <!-- Hobby 4 -->
-            <div class="overflow-hidden rounded-3xl shadow-xl transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="400">
-                <img src="assets/img/p3.jpg" alt="Cooking" class="w-full h-72 object-cover">
-                <div class="p-4 bg-white dark:bg-gray-700 text-center">
-                    <p class="text-gray-800 dark:text-gray-200 text-lg font-semibold">Cooking 🍳</p>
-                </div>
-            </div>
-
-            <!-- Hobby 5 -->
-            <div class="overflow-hidden rounded-3xl shadow-xl transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="500">
-                <img src="assets/img/p4.jpg" alt="Plant Parenting" class="w-full h-72 object-cover">
-                <div class="p-4 bg-white dark:bg-gray-700 text-center">
-                    <p class="text-gray-800 dark:text-gray-200 text-lg font-semibold">Plant Parenting 🌱</p>
-                </div>
-            </div>
-
-            <!-- Hobby 6 -->
-            <div class="overflow-hidden rounded-3xl shadow-xl transform transition duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="600">
-                <img src="assets/img/cricket.webp" alt="Paddling Escapes" class="w-full h-72 object-cover">
-                <div class="p-4 bg-white dark:bg-gray-700 text-center">
-                    <p class="text-gray-800 dark:text-gray-200 text-lg font-semibold">Cricket 🏏 .</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Initialize AOS Animations -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1200, once: true });
-</script>
-
-<!-- Core competencies section starts here -->
-<section id="skills" class="py-20 bg-[#F8FAFC] dark:bg-[#1E293B]"> <!-- Very Light Slate / Dark Slate -->
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-blue-600 dark:text-blue-300 mb-12" data-aos="fade-up">Core Competencies</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-            <!-- Competency 1 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-3xl shadow-xl text-center transform transition duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
-                <div class="text-5xl text-blue-500 mb-4">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">Problem-Solving</h3>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Innovative thinker who loves tackling complex challenges and finding creative, data-driven solutions.</p>
-            </div>
-
-            <!-- Competency 2 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-3xl shadow-xl text-center transform transition duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
-                <div class="text-5xl text-blue-500 mb-4">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">Leadership & Collaboration</h3>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Strong leadership skills with a focus on teamwork, collaboration, and driving shared success.</p>
-            </div>
-
-            <!-- Competency 3 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-3xl shadow-xl text-center transform transition duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="300">
-                <div class="text-5xl text-blue-500 mb-4">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">Analytical Thinking</h3>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Turning complex data into actionable insights that drive impactful business decisions.</p>
-            </div>
-
-            <!-- Competency 4 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-3xl shadow-xl text-center transform transition duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="400">
-                <div class="text-5xl text-blue-500 mb-4">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">Communication Skills</h3>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Effective at storytelling with data, delivering clear insights to stakeholders, and facilitating strategic discussions.</p>
-            </div>
-
-            <!-- Competency 5 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-3xl shadow-xl text-center transform transition duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="500">
-                <div class="text-5xl text-blue-500 mb-4">
-                    <i class="fas fa-sync-alt"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">Adaptability & Learning</h3>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Continuously evolving with emerging trends, adapting quickly to new challenges and technologies.</p>
-            </div>
-
-            <!-- Competency 6 -->
-            <div class="p-6 bg-white dark:bg-gray-700 rounded-3xl shadow-xl text-center transform transition duration-500 hover:scale-105" data-aos="zoom-in" data-aos-delay="600">
-                <div class="text-5xl text-blue-500 mb-4">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">Creativity & Innovation</h3>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Passionate about bringing fresh ideas and innovative solutions to projects and problem-solving scenarios.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Initialize AOS Animations -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1200, once: true });
-</script>
-
-<!-- Awards & Achievements Section -->
-<section id="awards" class="py-20 bg-[#1565C0]"> <!-- Deep Blue Accent / Near Black -->
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="section-title text-4xl font-bold text-center text-white dark:text-blue-300 mb-12" data-aos="fade-up">Awards & Achievements</h2>
-        <div class="space-y-12">
-            
-
-<!-- Award 2 -->
-<div class="relative p-8 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl transform transition duration-700 hover:scale-105" data-aos="fade-left" data-aos-delay="200">
-    <div class="flex items-center mb-4">
-        <div class="text-4xl text-blue-500 mr-4">
-            <i class="fas fa-medal"></i>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">Best Employee Award – Process Automation with Power BI & SQL Server</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-300">KFin Technology | 2017</p>
-        </div>
-    </div>
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Received the Best Employee Award at KFin Technologies for automating 80% of manual processes using Power BI and SQL Server, significantly enhancing efficiency and reducing manual effort.</p>
-</div>
-
-<!-- Award 3 -->
-<div class="relative p-8 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl transform transition duration-700 hover:scale-105" data-aos="fade-right" data-aos-delay="300">
-    <div class="flex items-center mb-4">
-        <div class="text-4xl text-blue-500 mr-4">
-            <i class="fas fa-award"></i>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">Excellence in Data Visualization</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-300">Accenture | 2020</p>
-        </div>
-    </div>
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Created impactful dashboards leading to improved business insights.</p>
-</div>
-
-<!-- Award 4 -->
-<div class="relative p-8 bg-white dark:bg-gray-700 rounded-3xl shadow-2xl transform transition duration-700 hover:scale-105" data-aos="fade-left" data-aos-delay="400">
-    <div class="flex items-center mb-4">
-        <div class="text-4xl text-blue-500 mr-4">
-            <img src="assets/img/Mindspacwe-skywalk.webp" class="w-16 h-16 mr-5 rounded-2xl shadow-lg">
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300">Endurance Athlete Recognition</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-300">MINDSPACE EcoRun Hyderabad</p>
-        </div>
-    </div>
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Recognized for completing multiple long-distance running events.</p>
-</div>
-
-    </div>
-</section>
-
-<!--Contact sections starts here-->
-<!-- Footer Section (Contact converted) -->
-<section id="contact" class="bg-[#e9ecef] py-8 text-gray-700 dark:text-gray-300">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-8" data-aos="fade-up">
-            <h2 class="text-4xl font-bold text-blue-600 dark:text-blue-300 mb-4">Let's Connect</h2>
-            <p class="text-xl">
-                 <strong>Data speaks. We just make it sing! 🎵📊</strong>
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center text-center">
-            <div class="text-lg" data-aos="fade-right">
-                <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-300 mb-4">Get in Touch</h3>
-                <p class="flex justify-center items-center space-x-4">
-                    <i class="fas fa-envelope text-blue-500 text-2xl"></i>
-                    <a href="mailto:saireddy.chatla@gmail.com" class="hover:text-blue-600 transition duration-300">saireddy.chatla@gmail.com</a>
-                </p>
-                <p class="flex justify-center items-center space-x-4">
-                    <i class="fas fa-map-marker-alt text-blue-500 text-2xl"></i>
-                    <span>Virginia, USA</span>
-                </p>
-            </div>
-
-            <div class="text-lg" data-aos="fade-left">
-                <div class="flex justify-center space-x-6 mb-6">
-                    <a href="https://www.linkedin.com/in/soniaranvir/" target="_blank" class="text-blue-600 dark:text-blue-300 hover:text-blue-800 text-3xl">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/saireddychatla123" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 text-3xl">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://x.com/saich9" target="_blank" class="text-blue-400 hover:text-blue-600 text-3xl">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    
-                </div>
-                <div>
-                    <a href="assets/MyCV.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
-                        Download My Resume
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <footer class="text-center mt-8 text-sm text-gray-700 dark:text-gray-300">
-            © 2025 Sai Reddy. All Rights Reserved.
-        </footer>
-    </div>
-</section>
-
-
-<!-- Initialize AOS Animations -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1200, once: true });
-</script>
-
-
-    <!-- Scroll-to-Top Button -->
-     <button id="scrollToTopBtn" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-transform duration-300 transform hover:scale-110 hidden">
-        <i class="fas fa-angle-up"></i>
-    </button>
-    <!-- Scroll-to-Top Button Script -->
-     <script>
-    // Show or hide the button based on scroll position
-    window.onscroll = function() {
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            scrollToTopBtn.style.display = "block";
-        } else {
-            scrollToTopBtn.style.display = "none";
-        }
+    // Dark mode (already dark by default)
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light');
+      }
     };
 
-    // Scroll smoothly to the top when button is clicked
-    document.getElementById("scrollToTopBtn").addEventListener("click", function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+    // Typed.js
+    new Typed('.typed', {
+      strings: [
+        "Data Analytics",
+        "AWS QuickSight",
+        "Power BI Development",
+        "Data Engineering",
+        "Python Development",
+        "Machine Learning",
+        "Cloud Computing",
+        "Business Intelligence",
+        "Data Warehousing",
+        "ETL Development"
+      ],
+      typeSpeed: 55,
+      backSpeed: 30,
+      loop: true
     });
-    </script>
-
-
-    <!-- JavaScript for Light/Dark Mode, Typing Effect, and Scroll-to-Top Button -->
-    <script>
-        // Light/Dark Mode Toggle
-        document.getElementById('theme-toggle').addEventListener('click', function() {
-          document.documentElement.classList.toggle('dark');
-      
-          // Save the mode to local storage
-          if (document.documentElement.classList.contains('dark')) {
-            localStorage.setItem('theme', 'dark');
-          } else {
-            localStorage.setItem('theme', 'light');
-          }
-        });
-      
-        // Load the saved theme on page load
-        window.onload = function() {
-          if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-          }
-        };
-      
-    
-        // Typing Animation
-        const typingText = ["Data Analytics", "Data Engineering", "Python Development", "Cloud Integrations"];
-        let i = 0, j = 0, currentText = '', isDeleting = false;
-    
-        function type() {
-            if (i < typingText.length) {
-                if (!isDeleting && j <= typingText[i].length) {
-                    currentText = typingText[i].substring(0, j++);
-                    document.querySelector('.typing-text').textContent = currentText;
-                    setTimeout(type, 150);
-                } else if (isDeleting && j > 0) {
-                    currentText = typingText[i].substring(0, j--);
-                    document.querySelector('.typing-text').textContent = currentText;
-                    setTimeout(type, 100);
-                } else if (!isDeleting && j > typingText[i].length) {
-                    isDeleting = true;
-                    setTimeout(type, 1000);
-                } else if (isDeleting && j === 0) {
-                    isDeleting = false;
-                    i = (i + 1) % typingText.length;
-                    setTimeout(type, 500);
-                }
-            }
-        }
-        document.addEventListener('DOMContentLoaded', type);
-    </script>
-<!-- JavaScript for the Mobile Menu -->
-<!--Toggle for Mobile Menu -->
-    <script>
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenu.classList.toggle('hidden');
-    });
-</script>
-
+  </script>
 </body>
-
+</html>
